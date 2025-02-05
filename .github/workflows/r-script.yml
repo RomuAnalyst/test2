@@ -36,4 +36,4 @@ jobs:
           git commit -m "Update results.csv" || echo "No changes to commit"  # Commit les modifications
           git push origin main  # Poussez les modifications sur la branche principale
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Utilisez le token GitHub pour l'authentification
+          GITHUB_TOKEN: ${{ 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 }}  # Utilisez le token GitHub pour l'authentification
