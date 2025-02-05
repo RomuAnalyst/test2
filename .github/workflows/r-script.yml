@@ -1,11 +1,9 @@
-
 name: R Script Runner
 
 on:
   push:
     branches:
       - main  # Changez 'main' par le nom de votre branche si nécessaire
-  
   schedule:
     - cron: '*/5 * * * *'  # Exécute le workflow toutes les 5 minutes
 
@@ -29,3 +27,13 @@ jobs:
       - name: Run R script
         run: |
           Rscript your_script.R  # Remplacez 'path/to/your_script.R' par le chemin de votre script
+
+      - name: Commit and Push CSV Update
+        run: |
+          git config --local user.email "you@example.com"  # Remplacez par votre adresse email
+          git config --local user.name "Your Name"  # Remplacez par votre nom
+          git add output/results.csv  # Chemin vers votre fichier CSV
+          git commit -m "Update results.csv" || echo "No changes to commit"  # Commit les modifications
+          git push origin main  # Poussez les modifications sur la branche principale
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Utilisez le token GitHub pour l'authentification
