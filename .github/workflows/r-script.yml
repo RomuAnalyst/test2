@@ -1,1 +1,28 @@
+yaml
+name: R Script Runner
 
+on:
+  push:
+    branches:
+      - main  # Changez 'main' par le nom de votre branche si nécessaire
+
+jobs:
+  run-r-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+        with:
+          R-version: '4.1'  # Indiquez la version R que vous souhaitez utiliser
+
+      - name: Install dependencies
+        run: |
+          R -e 'install.packages("dplyr")'  # Modifiez en fonction de vos dépendances
+
+      - name: Run R script
+        run: |
+          Rscript path/to/your_script.R  # Remplacez 'path/to/your_script.R' par le chemin de votre script
