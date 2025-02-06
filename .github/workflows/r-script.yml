@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main  # Changez 'main' par le nom de votre branche si nécessaire
+  schedule:
+    - cron: '*/5 * * * *'  # Exécute le workflow toutes les 5 minutes
 
 jobs:
   run-r-script:
