@@ -30,9 +30,9 @@ jobs:
 
       - name: Commit and Push CSV Update
         run: |
-          git config --local user.email "you@example.com"  # Remplacez par votre adresse email
-          git config --local user.name "Your Name"  # Remplacez par votre nom
-          git add output/results.csv  # Chemin vers votre fichier CSV
+          git config --local user.email "romu.zami@gmail.com"  # Remplacez par votre adresse email
+          git config --local user.name "Romu"  # Remplacez par votre nom
+          git add results.csv  # Chemin vers votre fichier CSV
           git commit -m "Update results.csv" || echo "No changes to commit"  # Commit les modifications
           git push origin main  # Poussez les modifications sur la branche principale
         env:
