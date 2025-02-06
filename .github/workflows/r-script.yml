@@ -30,10 +30,11 @@ jobs:
 
       - name: Commit and Push CSV Update
         run: |
-          git config --local user.email "romu.zami@gmail.com"  # Remplacez par votre adresse email
-          git config --local user.name "Romu"  # Remplacez par votre nom
+          git config --local user.email "test@gmail.com"  # Remplacez par votre adresse email
+          git config --local user.name "Test"  # Remplacez par votre nom
           git add results.csv  # Chemin vers votre fichier CSV
           git commit -m "Update results.csv" || echo "No changes to commit"  # Commit les modifications
           git push origin main  # Poussez les modifications sur la branche principale
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/RomuAnalyst/test2.git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Utilisez le token GitHub pour l'authentification
