@@ -22,8 +22,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          R -e 'install.packages("dplyr")'  # Modifiez en fonction de vos dépendances
-
+          R -e "install.packages(c('tidyverse', 'httr2', 'jsonlite'), repos='http://cran.rstudio.com/')"
       - name: Run R script
         run: |
           Rscript your_script.R  # Remplacez 'path/to/your_script.R' par le chemin de votre script
