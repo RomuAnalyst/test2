@@ -1,3 +1,7 @@
+# Installer les packages nécessaires si ce n'est pas déjà fait
+install.packages(c("tidyverse", "httr2"))
+
+# Charger les bibliothèques
 library(tidyverse)
 library(httr2)
 
