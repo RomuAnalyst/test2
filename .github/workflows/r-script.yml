@@ -21,7 +21,9 @@ jobs:
 
       - name: Install R packages
         run: |
-          R -e "install.packages(c('tidyverse', 'httr2', 'jsonlite'), repos='http://cran.rstudio.com/')"
+          R -e 'install.packages("tidyverse")'
+          R -e 'install.packages("httr2")'
+          R -e 'install.packages("jsonlite")'
 
       - name: Run R script
         run: |
