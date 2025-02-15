@@ -1,5 +1,11 @@
 # Installer les packages nécessaires si ce n'est pas déjà fait
-install.packages(c("tidyverse", "httr2"))
+# Installer les packages nécessaires si absent
+
+to_install <- c("tidyverse", "httr2") 
+
+new_packages <- to_install[!(to_install %in% installed.packages()[,"Package"])]
+
+if(length(new_packages)) install.packages(new_packages)
 
 # Charger les bibliothèques
 library(tidyverse)
